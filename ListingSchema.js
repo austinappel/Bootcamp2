@@ -19,6 +19,8 @@ var listingSchema = new Schema({
    See https://scotch.io/tutorials/using-mongoosejs-in-node-js-and-mongodb-applications
 */
 listingSchema.pre('save', function(next) {
+  if (err) throw err;
+
   /* your code here */
   var currentDate = new Date();
   this.updated_at = currentDate;
