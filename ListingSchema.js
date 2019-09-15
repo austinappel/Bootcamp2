@@ -9,8 +9,8 @@ var mongoose = require('mongoose'),
 var listingSchema = new Schema({
   /* Your code for a schema here */ 
   //Check out - https://mongoosejs.com/docs/guide.html
-  code: String,
-  name: String,
+  code: {type: String, required: true},
+  name: {type: String, required: true},
   coordinates: {latitude:  Number, longitude:  Number},
   address:  String
 });
@@ -19,7 +19,6 @@ var listingSchema = new Schema({
    See https://scotch.io/tutorials/using-mongoosejs-in-node-js-and-mongodb-applications
 */
 listingSchema.pre('save', function(next) {
-  if (err) throw err;
 
   /* your code here */
   var currentDate = new Date();
