@@ -20,7 +20,6 @@ var listingSchema = new Schema({
 */
 listingSchema.pre('save', function(next) {
 
-  /* your code here */
   var currentDate = new Date();
   this.updated_at = currentDate;
 
